@@ -26,6 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[DivRssApi sharedClient] getRSSsuccess:^(AFHTTPRequestOperation * operation, id responseObject){
+    NSLog(@"%@",responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+    
+    } ];
 	// Do any additional setup after loading the view.
 }
 

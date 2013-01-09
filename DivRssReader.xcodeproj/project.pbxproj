@@ -28,6 +28,9 @@
 		189C3402169CB16400EFE673 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C3401169CB16400EFE673 /* DataSource.m */; };
 		189C3405169CB44E00EFE673 /* DivRss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 189C3403169CB44E00EFE673 /* DivRss.xcdatamodeld */; };
 		189C3408169CBAF600EFE673 /* DivRssDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C3407169CBAF600EFE673 /* DivRssDataSource.m */; };
+		18D29C8B169E0FD1006A107B /* RSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D29C8A169E0FD1006A107B /* RSSItem.m */; };
+		18D29C99169E19EF006A107B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D29C98169E19EF006A107B /* SystemConfiguration.framework */; };
+		18D29C9B169E1A8C006A107B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D29C9A169E1A8C006A107B /* MobileCoreServices.framework */; };
 		DB76DC193C834B36A9FB74EC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61E7EC37A9C4C6FA06FBBA1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,10 @@
 		189C3404169CB44E00EFE673 /* DivRss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DivRss.xcdatamodel; sourceTree = "<group>"; };
 		189C3406169CBAF500EFE673 /* DivRssDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DivRssDataSource.h; path = Model/DB/DivRssDataSource.h; sourceTree = "<group>"; };
 		189C3407169CBAF600EFE673 /* DivRssDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DivRssDataSource.m; path = Model/DB/DivRssDataSource.m; sourceTree = "<group>"; };
+		18D29C89169E0FD1006A107B /* RSSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSSItem.h; path = Model/DBObjects/RSSItem.h; sourceTree = "<group>"; };
+		18D29C8A169E0FD1006A107B /* RSSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSSItem.m; path = Model/DBObjects/RSSItem.m; sourceTree = "<group>"; };
+		18D29C98169E19EF006A107B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		18D29C9A169E1A8C006A107B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E61E7EC37A9C4C6FA06FBBA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D29C9B169E1A8C006A107B /* MobileCoreServices.framework in Frameworks */,
+				18D29C99169E19EF006A107B /* SystemConfiguration.framework in Frameworks */,
 				189C33FC169CAFF900EFE673 /* CoreData.framework in Frameworks */,
 				189C33A6169C9B4800EFE673 /* UIKit.framework in Frameworks */,
 				189C33A8169C9B4800EFE673 /* Foundation.framework in Frameworks */,
@@ -103,6 +112,8 @@
 		189C33A4169C9B4800EFE673 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18D29C9A169E1A8C006A107B /* MobileCoreServices.framework */,
+				18D29C98169E19EF006A107B /* SystemConfiguration.framework */,
 				189C33FB169CAFF900EFE673 /* CoreData.framework */,
 				189C33A5169C9B4800EFE673 /* UIKit.framework */,
 				189C33A7169C9B4800EFE673 /* Foundation.framework */,
@@ -145,6 +156,7 @@
 		189C33D6169CA0FD00EFE673 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				189C3447169DFD4800EFE673 /* DBObjects */,
 				189C33DE169CA1BF00EFE673 /* DBApi */,
 				189C33D8169CA12000EFE673 /* API */,
 			);
@@ -198,6 +210,15 @@
 				189C33FF169CB07E00EFE673 /* Config.h */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		189C3447169DFD4800EFE673 /* DBObjects */ = {
+			isa = PBXGroup;
+			children = (
+				18D29C89169E0FD1006A107B /* RSSItem.h */,
+				18D29C8A169E0FD1006A107B /* RSSItem.m */,
+			);
+			name = DBObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +317,7 @@
 				189C3402169CB16400EFE673 /* DataSource.m in Sources */,
 				189C3405169CB44E00EFE673 /* DivRss.xcdatamodeld in Sources */,
 				189C3408169CBAF600EFE673 /* DivRssDataSource.m in Sources */,
+				18D29C8B169E0FD1006A107B /* RSSItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,7 @@
 PODS:
   - AFNetworking (1.1.0)
+  - GDataXML-HTML (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - GDataXML-HTML

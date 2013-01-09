@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 Artem Kislitsyn. All rights reserved.
 //
 
-
+#define PARSE_ERROR @"parsing error"
 #define DBNAME @"DivRss"
 
+#define SERVER_BASE_URL @"http://developer.apple.com/"
+#define RSS_URL @"news/rss/news.rss"
 #define APPLICATION_DOCUMENTS_DIRECTORY [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 #define APPLICATION_CACHE_DIRECTORY [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
 #define WEB_CACHE_PATH [APPLICATION_CACHE_DIRECTORY stringByAppendingPathComponent:@"WebCache"]

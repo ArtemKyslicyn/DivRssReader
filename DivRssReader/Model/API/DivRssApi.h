@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-
-@interface DivRssApi : NSObject
+#import "AFHTTPClient.h"
+@interface DivRssApi : AFHTTPClient
++ (DivRssApi *)sharedClient;
+-(void)getRSSsuccess:(void (^)(AFHTTPRequestOperation * operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 @end
