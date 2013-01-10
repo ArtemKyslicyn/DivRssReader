@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RssViewController : UIViewController
+@interface RssViewController : UITableViewController{
+    NSArray*rssArray;
+}
 
 @end

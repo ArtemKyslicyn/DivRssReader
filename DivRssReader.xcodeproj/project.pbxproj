@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185980AE169F4D7A0069556C /* RSSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185980AD169F4D790069556C /* RSSCell.m */; };
+		185980B6169F55030069556C /* RSSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185980B5169F55030069556C /* RSSDetailViewController.m */; };
 		189C33A6169C9B4800EFE673 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189C33A5169C9B4800EFE673 /* UIKit.framework */; };
 		189C33A8169C9B4800EFE673 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189C33A7169C9B4800EFE673 /* Foundation.framework */; };
 		189C33AA169C9B4800EFE673 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189C33A9169C9B4800EFE673 /* CoreGraphics.framework */; };
@@ -36,6 +38,10 @@
 
 /* Begin PBXFileReference section */
 		0BD8A615C145409CA35D99D0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		185980AC169F4D790069556C /* RSSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSSCell.h; path = UI/Cell/RSSCell.h; sourceTree = "<group>"; };
+		185980AD169F4D790069556C /* RSSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSSCell.m; path = UI/Cell/RSSCell.m; sourceTree = "<group>"; };
+		185980B4169F55030069556C /* RSSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSSDetailViewController.h; path = UI/RSSDetailViewController.h; sourceTree = "<group>"; };
+		185980B5169F55030069556C /* RSSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSSDetailViewController.m; path = UI/RSSDetailViewController.m; sourceTree = "<group>"; };
 		189C33A1169C9B4800EFE673 /* DivRssReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DivRssReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189C33A5169C9B4800EFE673 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		189C33A7169C9B4800EFE673 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		185980B0169F4D820069556C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				185980AC169F4D790069556C /* RSSCell.h */,
+				185980AD169F4D790069556C /* RSSCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		189C3396169C9B4800EFE673 = {
 			isa = PBXGroup;
 			children = (
@@ -175,8 +190,11 @@
 		189C33D9169CA12D00EFE673 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				185980B0169F4D820069556C /* Cell */,
 				189C33DF169CA53F00EFE673 /* RssViewController.h */,
 				189C33E0169CA53F00EFE673 /* RssViewController.m */,
+				185980B4169F55030069556C /* RSSDetailViewController.h */,
+				185980B5169F55030069556C /* RSSDetailViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -318,6 +336,8 @@
 				189C3405169CB44E00EFE673 /* DivRss.xcdatamodeld in Sources */,
 				189C3408169CBAF600EFE673 /* DivRssDataSource.m in Sources */,
 				18D29C8B169E0FD1006A107B /* RSSItem.m in Sources */,
+				185980AE169F4D7A0069556C /* RSSCell.m in Sources */,
+				185980B6169F55030069556C /* RSSDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

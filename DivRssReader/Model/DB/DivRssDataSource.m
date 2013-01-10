@@ -7,7 +7,7 @@
 //
 
 #import "DivRssDataSource.h"
-
+#import "RSSItem.h"
 @implementation DivRssDataSource
 
 + (id)sharedClient
@@ -22,6 +22,23 @@
     });
     
     return __dataSource;
+}
+
+
+- (RSSItem*) getRssItemForTitle:(NSString*)title  {
+    
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title LIKE %@",title];
+        NSArray *rssItems = [self getAllByName:@"RSSItem" predicate:predicate];
+        return [rssItems lastObject];
+    
+}
+
+-(NSArray*)getAllRss{
+    
+    NSArray *rssItems = [self getAllByName:@"RSSItem"];
+    
+    return rssItems;
+
 }
 
 @end
