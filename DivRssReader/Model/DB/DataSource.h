@@ -67,4 +67,5 @@
 - (NSArray *) getAllByName:(NSString *)objectName predicate:(NSPredicate*)predicate;
 
 
+
 @end

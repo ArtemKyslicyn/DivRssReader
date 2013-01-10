@@ -7,15 +7,15 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LocalSubstitutionCache.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
      [[DivRssDataSource sharedClient] managedObjectContext];
-     
+    
     // Override point for customization after application launch.
-    return YES;
+     return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

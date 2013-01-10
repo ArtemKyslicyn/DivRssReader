@@ -11,4 +11,5 @@
 @interface DivRssDataSource : DataSource
 
 + (id)sharedClient;
+-(NSArray*)getAllRss;
 @end

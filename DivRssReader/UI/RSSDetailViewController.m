@@ -41,13 +41,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+ 
+   
 }
 -(void)viewWillAppear:(BOOL)animated{
   
-    NSURL* url = [NSURL URLWithString:urlString];
+   NSURL* url = [NSURL URLWithString:urlString];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
+   
     [self.webView loadRequest:request];
+    
     [super viewWillAppear:animated];
+   
 }
 
 - (void)didReceiveMemoryWarning

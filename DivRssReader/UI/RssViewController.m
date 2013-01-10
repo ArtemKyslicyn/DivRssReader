@@ -32,7 +32,8 @@
         rssArray=responseObject;
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-    
+        rssArray=[[DivRssDataSource sharedClient] getAllRss];
+        [self.tableView reloadData];
     } ];
 	// Do any additional setup after loading the view.
 }

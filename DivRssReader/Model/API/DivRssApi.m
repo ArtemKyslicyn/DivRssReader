@@ -9,6 +9,7 @@
 #import "DivRssApi.h"
 #import "GDataXMLNode.h"
 #import "RSSItem.h"
+#import "LocalSubstitutionCache.h"
 @implementation DivRssApi
 
 + (DivRssApi *)sharedClient{
@@ -17,6 +18,8 @@
     dispatch_once(&onceToken, ^{
         
         _sharedClient = [[DivRssApi alloc] initWithBaseURL:[NSURL URLWithString:SERVER_BASE_URL] ];
+        LocalSubstitutionCache *cache = [[LocalSubstitutionCache alloc] init];
+        [NSURLCache setSharedURLCache:cache];
     });
     
     return _sharedClient;
@@ -30,7 +33,7 @@
         GDataXMLDocument* doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
         
         if (doc != nil) {
-           
+           [[DivRssDataSource sharedClient] removeAllEntityName:@"RSSItem" withPredicate:nil];
             NSArray* items = [[doc rootElement] nodesForXPath:@"channel/item" error:&error];
              rssItems = [NSMutableArray arrayWithCapacity:[items count] ];
             
@@ -39,7 +42,7 @@
                 [rssItems addObject: [RSSItem createRSSObjectFromXmlItem:xmlItem]];
             
             }
-            
+            [[DivRssDataSource sharedClient] saveChanges];
             
         } else {
            
