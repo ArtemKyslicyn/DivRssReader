@@ -1,7 +1,11 @@
 PODS:
   - AFNetworking (1.1.0)
   - GDataXML-HTML (1.0.0)
+  - MBProgressHUD (0.5)
+  - SDURLCache (1.2)
 
 DEPENDENCIES:
   - AFNetworking
   - GDataXML-HTML
+  - MBProgressHUD
+  - SDURLCache

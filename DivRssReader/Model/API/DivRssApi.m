@@ -10,6 +10,7 @@
 #import "GDataXMLNode.h"
 #import "RSSItem.h"
 #import "LocalSubstitutionCache.h"
+#import "SDURLCache.h"
 @implementation DivRssApi
 
 + (DivRssApi *)sharedClient{
@@ -18,8 +19,15 @@
     dispatch_once(&onceToken, ^{
         
         _sharedClient = [[DivRssApi alloc] initWithBaseURL:[NSURL URLWithString:SERVER_BASE_URL] ];
+      
+        //[NSURLCache setSharedURLCache:cache];
+        
+        SDURLCache *urlCache = [[SDURLCache alloc] initWithMemoryCapacity:1024*1024   // 1MB mem cache
+                                                             diskCapacity:1024*1024*5 // 5MB disk cache
+                                                                 diskPath:[SDURLCache defaultCachePath]];
+        [NSURLCache setSharedURLCache:urlCache];
         LocalSubstitutionCache *cache = [[LocalSubstitutionCache alloc] init];
-        [NSURLCache setSharedURLCache:cache];
+        
     });
     
     return _sharedClient;
