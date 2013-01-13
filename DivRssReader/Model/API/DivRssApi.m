@@ -32,7 +32,7 @@
         NSMutableArray* rssItems;
         NSError * error=nil;
         GDataXMLDocument* doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
-        
+        //if data correct Parsing with Gdata and save to core data 
         if (doc != nil) {
            [[DivRssDataSource sharedClient] removeAllEntityName:@"RSSItem" withPredicate:nil];
             NSArray* items = [[doc rootElement] nodesForXPath:@"channel/item" error:&error];

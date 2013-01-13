@@ -18,14 +18,8 @@
 @dynamic orderNumber;
 
 +(RSSItem*)createRSSObjectFromXmlItem:(GDataXMLElement*)xmlItem{
-    
-    
-    RSSItem * item=nil;
-    
-    if (!item) {
-        item =( RSSItem *)[[DivRssDataSource sharedClient] createNew:@"RSSItem"];
-    }
-    
+    //Take data from xml item
+    RSSItem * item =( RSSItem *)[[DivRssDataSource sharedClient] createNew:@"RSSItem"];
     item.title=[[[xmlItem elementsForName:@"title"] objectAtIndex:0] stringValue];
     item.link=[[[xmlItem elementsForName:@"link"] objectAtIndex:0] stringValue];
     item.descript=[[[xmlItem elementsForName:@"description"] objectAtIndex:0] stringValue];
@@ -35,19 +29,21 @@
 }
 
 -(float)cellHeight{
-    float height;
-    height=[self titleHeight]+[self descriptHeight]+[self pubDateHeight]+15;
-    return height;
+    //CELL HEIGHT
+    return [self titleHeight]+[self descriptHeight]+[self pubDateHeight]+CELL_OFFSET;
 }
 
 -(float)titleHeight{
-    return [self.title sizeWithFont:[UIFont boldSystemFontOfSize:17] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
+     //Calculated height from text for title
+    return [self.title sizeWithFont:[UIFont boldSystemFontOfSize:TITLE_FONT] constrainedToSize:CGSizeMake(CONTENT_WIDTH, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
 }
 -(float)descriptHeight{
-    return [self.descript sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
+    //Calculated height from text for description
+    return [self.descript sizeWithFont:[UIFont systemFontOfSize:DESCR_FONT] constrainedToSize:CGSizeMake(CONTENT_WIDTH, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
 }
 
 -(float)pubDateHeight{
-    return [self.pubDate sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
+     //Calculated height from text for date
+    return [self.pubDate sizeWithFont:[UIFont systemFontOfSize:DATE_FONT] constrainedToSize:CGSizeMake(CONTENT_WIDTH, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
 }
 @end

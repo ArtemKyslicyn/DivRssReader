@@ -30,24 +30,25 @@
 }
 
 -(void)configureCellWithRssItem:(RSSItem*)item{
-    self.lblTitle.text=item.title;
-   
-    CGRect lblTitleRect=lblTitle.frame;
-    lblTitleRect.size.height=[item titleHeight];
+    self.lblTitle.text = item.title;
+    //Set height for title calculted in item
+    CGRect lblTitleRect = lblTitle.frame;
+    lblTitleRect.size.height = [item titleHeight];
     self.lblTitle.frame=lblTitleRect;
     
-    lblDate.text=item.pubDate;
-    CGRect lblDateRect=lblDate.frame;
-    lblDateRect.size.height=[item pubDateHeight];
-    lblDateRect.origin.y=lblTitle.frame.origin.y+lblTitle.frame.size.height;
-    self.lblDate.frame=lblDateRect;
+    lblDate.text = item.pubDate;
+    CGRect lblDateRect = lblDate.frame;
+    //Set height for date calculted in item
+    lblDateRect.size.height = [item pubDateHeight];
+    lblDateRect.origin.y = lblTitle.frame.origin.y + lblTitle.frame.size.height;
+    self.lblDate.frame = lblDateRect;
     
-    lblDesc.text=item.descript;
-
-    CGRect lblDescRect=lblDesc.frame;
-    lblDescRect.size.height=[item descriptHeight];
-    lblDescRect.origin.y=lblDate.frame.origin.y+lblDate.frame.size.height;
-    self.lblDesc.frame=lblDescRect;
+    lblDesc.text = item.descript;
+    //Set height for Description calculted in item
+    CGRect lblDescRect = lblDesc.frame;
+    lblDescRect.size.height = [item descriptHeight];
+    lblDescRect.origin.y = lblDate.frame.origin.y + lblDate.frame.size.height;
+    self.lblDesc.frame = lblDescRect;
 }
 
 @end

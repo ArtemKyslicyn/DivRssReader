@@ -31,14 +31,8 @@
  @result array of objects from db.
  */
 - (NSArray *) getAllByName:(NSString *)objectName;
-/*!
- @discussion Returns array with ManagedObject objects sorted with sortExpression given.
- @param objectName Name of NSManagedObject
- @param sortExpression Sort expresstion.
- @result Array of objects.
- */
-//- (NSArray *) getDataFromObject:(NSString *) objectName withSort:(NSString *)sortExpression;
-/*!
+
+/*
  @discussion Сортировка переданного массива по ключу.
  @param arr Массив для сортировки.
  @param key Поле по которому сортировать.
@@ -46,17 +40,6 @@
  @result Отсортированный массив.
  */
 - (NSArray *) sortArray:(NSArray *) arr byKey:(NSString *)key ascending:(BOOL) ascending;
-/*!
- @discussion Internal method. Searches .mom files in main bundle to load db scheme from.
- @result File path if found .mom file, otherwise nil.
- */
-//- (NSString *) modelFilePath;
-/*!
- @discussion File path to save created sqlite or load from into application. Sublasses should overwrite.
- Default is path created with name of .mom file in application documents directory.
- @result 
- */
-//- (NSString *) dbSQLiteFilePath;
 
 /*!
  @discussion Remove entities in database with predicate.

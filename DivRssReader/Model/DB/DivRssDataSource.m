@@ -36,7 +36,10 @@
 -(NSArray*)getAllRss{
     
     NSArray *rssItems = [self getAllByName:@"RSSItem"];
+    //sorting by item order
     rssItems=[self  sortArray: rssItems byKey:@"orderNumber" ascending:YES];
+    
+    //sorted by date
     
     /*rssItems = [rssItems sortedArrayUsingComparator: ^(id a, id b) {
         

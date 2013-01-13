@@ -33,30 +33,44 @@
     
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-     [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
-  /*   NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-    [[NSFileManager defaultManager]
-     createFileAtPath:[self cacheFile] contents:data attributes:nil];*/
+  
+    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+  
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+        
+        NSString *html = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] ;
+        
+        if (html.length>0) {
+            [html writeToFile:[self cachePath] atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        }
+   
+    });
+    
+    
+    
 }
 
--(NSString*)cacheFile
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
-                                                         NSUserDomainMask, YES);
-    NSString * diskPath=[NSString stringWithFormat:@"%@",urlString];
-    return [[paths objectAtIndex:0] stringByAppendingPathComponent:diskPath];
+
+-(NSString*)cachePath{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fileName=[NSString stringWithFormat:@"%x.html",[urlString hash]];
+    NSString *htmlFilePath = [documentsDirectory stringByAppendingPathComponent:/*@"file.html"*/fileName];
+    return htmlFilePath;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     
     [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
     
-    NSData *data = [NSData dataWithContentsOfFile:[self cacheFile]
+    NSData *data = [NSData dataWithContentsOfFile:[self cachePath]
                                           options:NSDataReadingMappedAlways error:nil];
-    
     [webView loadData:data MIMEType:@"text/html"
      textEncodingName:@"UTF-8" baseURL:[NSURL URLWithString:urlString]];
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
