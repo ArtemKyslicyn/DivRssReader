@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (weak, nonatomic) IBOutlet UITextView *lblDesc;
+@property (weak, nonatomic) IBOutlet UILabel *lblDesc;
 -(void)configureCellWithRssItem:(RSSItem*)item;
 @end

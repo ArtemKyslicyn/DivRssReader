@@ -43,7 +43,7 @@
     return [self.title sizeWithFont:[UIFont boldSystemFontOfSize:17] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
 }
 -(float)descriptHeight{
-    return [self.descript sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeCharacterWrap].height;
+    return [self.descript sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
 }
 
 -(float)pubDateHeight{
