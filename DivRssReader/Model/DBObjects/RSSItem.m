@@ -15,6 +15,7 @@
 @dynamic link;
 @dynamic descript;
 @dynamic pubDate;
+@dynamic orderNumber;
 
 +(RSSItem*)createRSSObjectFromXmlItem:(GDataXMLElement*)xmlItem{
     

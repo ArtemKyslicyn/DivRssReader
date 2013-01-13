@@ -117,7 +117,7 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
-		18955833169F77270059C7D1 /* Cache */ = {
+		18955833169F77270059C7D1 /* WebCache */ = {
 			isa = PBXGroup;
 			children = (
 				189C923216A2FD6700DAB621 /* Reachability.h */,
@@ -127,7 +127,7 @@
 				1895583A169F84ED0059C7D1 /* LocalSubstitutionCache.h */,
 				1895583B169F84ED0059C7D1 /* LocalSubstitutionCache.m */,
 			);
-			name = Cache;
+			name = WebCache;
 			sourceTree = "<group>";
 		};
 		189C3396169C9B4800EFE673 = {
@@ -195,7 +195,7 @@
 		189C33D6169CA0FD00EFE673 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				18955833169F77270059C7D1 /* Cache */,
+				18955833169F77270059C7D1 /* WebCache */,
 				189C3447169DFD4800EFE673 /* DBObjects */,
 				189C33DE169CA1BF00EFE673 /* DBApi */,
 				189C33D8169CA12000EFE673 /* API */,

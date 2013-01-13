@@ -34,9 +34,28 @@
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
      [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+  /*   NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+    [[NSFileManager defaultManager]
+     createFileAtPath:[self cacheFile] contents:data attributes:nil];*/
 }
+
+-(NSString*)cacheFile
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString * diskPath=[NSString stringWithFormat:@"%@",urlString];
+    return [[paths objectAtIndex:0] stringByAppendingPathComponent:diskPath];
+}
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-     [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+    
+    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+    
+    NSData *data = [NSData dataWithContentsOfFile:[self cacheFile]
+                                          options:NSDataReadingMappedAlways error:nil];
+    
+    [webView loadData:data MIMEType:@"text/html"
+     textEncodingName:@"UTF-8" baseURL:[NSURL URLWithString:urlString]];
 }
 - (void)viewDidLoad
 {
@@ -47,10 +66,19 @@
 -(void)viewWillAppear:(BOOL)animated{
   
    NSLog(@"%@",urlString);
-  // [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0]];
-  [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]]];
+  
+  [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString: urlString /*@"http://www.apple.com"*/]]];
   [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
   [super viewWillAppear:animated];
+    
+	
+   /* NSData *data = [NSData dataWithContentsOfFile:[self cacheFile]
+                                          options:NSDataReadingMappedAlways error:nil];
+    
+    NSString *myString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",myString);*/
+    
+
    
 }
 

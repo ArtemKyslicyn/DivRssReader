@@ -19,8 +19,6 @@
     dispatch_once(&onceToken, ^{
         
         _sharedClient = [[DivRssApi alloc] initWithBaseURL:[NSURL URLWithString:SERVER_BASE_URL] ];
-      
-        //[NSURLCache setSharedURLCache:cache];
         
        
     });
@@ -39,10 +37,11 @@
            [[DivRssDataSource sharedClient] removeAllEntityName:@"RSSItem" withPredicate:nil];
             NSArray* items = [[doc rootElement] nodesForXPath:@"channel/item" error:&error];
              rssItems = [NSMutableArray arrayWithCapacity:[items count] ];
-            
+           
             for (GDataXMLElement* xmlItem in items) {
-                
-                [rssItems addObject: [RSSItem createRSSObjectFromXmlItem:xmlItem]];
+                RSSItem *item=[RSSItem createRSSObjectFromXmlItem:xmlItem];
+                item.orderNumber=[NSNumber numberWithInt:rssItems.count];
+                [rssItems addObject: item];
             
             }
             [[DivRssDataSource sharedClient] saveChanges];

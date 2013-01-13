@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSString * descript;
 @property (nonatomic, retain) NSString * pubDate;
-
+@property (nonatomic, retain) NSNumber * orderNumber;
 +(RSSItem*)createRSSObjectFromXmlItem:(GDataXMLElement*)xmlItem;
 -(float)titleHeight;
 -(float)descriptHeight;
