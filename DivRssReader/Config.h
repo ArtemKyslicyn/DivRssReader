@@ -8,7 +8,7 @@
 
 #define PARSE_ERROR @"parsing error"
 #define DBNAME @"DivRss"
-
+#define CELL_OFFSET
 #define SERVER_BASE_URL @"http://developer.apple.com/"
 #define RSS_URL @"news/rss/news.rss"
 #define APPLICATION_DOCUMENTS_DIRECTORY [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]

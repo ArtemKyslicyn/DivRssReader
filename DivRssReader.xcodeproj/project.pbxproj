@@ -32,6 +32,8 @@
 		189C3402169CB16400EFE673 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C3401169CB16400EFE673 /* DataSource.m */; };
 		189C3405169CB44E00EFE673 /* DivRss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 189C3403169CB44E00EFE673 /* DivRss.xcdatamodeld */; };
 		189C3408169CBAF600EFE673 /* DivRssDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C3407169CBAF600EFE673 /* DivRssDataSource.m */; };
+		189C923616A2FD6700DAB621 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C923316A2FD6700DAB621 /* Reachability.m */; };
+		189C923716A2FD6700DAB621 /* RNCachingURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C923516A2FD6700DAB621 /* RNCachingURLProtocol.m */; };
 		18D29C8B169E0FD1006A107B /* RSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D29C8A169E0FD1006A107B /* RSSItem.m */; };
 		18D29C99169E19EF006A107B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D29C98169E19EF006A107B /* SystemConfiguration.framework */; };
 		18D29C9B169E1A8C006A107B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D29C9A169E1A8C006A107B /* MobileCoreServices.framework */; };
@@ -77,6 +79,10 @@
 		189C3404169CB44E00EFE673 /* DivRss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DivRss.xcdatamodel; sourceTree = "<group>"; };
 		189C3406169CBAF500EFE673 /* DivRssDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DivRssDataSource.h; path = Model/DB/DivRssDataSource.h; sourceTree = "<group>"; };
 		189C3407169CBAF600EFE673 /* DivRssDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DivRssDataSource.m; path = Model/DB/DivRssDataSource.m; sourceTree = "<group>"; };
+		189C923216A2FD6700DAB621 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Model/Cache/Reachability.h; sourceTree = "<group>"; };
+		189C923316A2FD6700DAB621 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Model/Cache/Reachability.m; sourceTree = "<group>"; };
+		189C923416A2FD6700DAB621 /* RNCachingURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNCachingURLProtocol.h; path = Model/Cache/RNCachingURLProtocol.h; sourceTree = "<group>"; };
+		189C923516A2FD6700DAB621 /* RNCachingURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNCachingURLProtocol.m; path = Model/Cache/RNCachingURLProtocol.m; sourceTree = "<group>"; };
 		18D29C89169E0FD1006A107B /* RSSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSSItem.h; path = Model/DBObjects/RSSItem.h; sourceTree = "<group>"; };
 		18D29C8A169E0FD1006A107B /* RSSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSSItem.m; path = Model/DBObjects/RSSItem.m; sourceTree = "<group>"; };
 		18D29C98169E19EF006A107B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -114,6 +120,10 @@
 		18955833169F77270059C7D1 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				189C923216A2FD6700DAB621 /* Reachability.h */,
+				189C923316A2FD6700DAB621 /* Reachability.m */,
+				189C923416A2FD6700DAB621 /* RNCachingURLProtocol.h */,
+				189C923516A2FD6700DAB621 /* RNCachingURLProtocol.m */,
 				1895583A169F84ED0059C7D1 /* LocalSubstitutionCache.h */,
 				1895583B169F84ED0059C7D1 /* LocalSubstitutionCache.m */,
 			);
@@ -160,7 +170,6 @@
 				189C33D6169CA0FD00EFE673 /* Model */,
 				189C33B4169C9B4900EFE673 /* AppDelegate.h */,
 				189C33B5169C9B4900EFE673 /* AppDelegate.m */,
-				189C33BD169C9B4900EFE673 /* MainStoryboard_iPhone.storyboard */,
 				189C33AC169C9B4800EFE673 /* Supporting Files */,
 			);
 			path = DivRssReader;
@@ -177,6 +186,7 @@
 				189C33B7169C9B4900EFE673 /* Default.png */,
 				189C33B9169C9B4900EFE673 /* Default@2x.png */,
 				189C33BB169C9B4900EFE673 /* Default-568h@2x.png */,
+				189C33BD169C9B4900EFE673 /* MainStoryboard_iPhone.storyboard */,
 				189C3403169CB44E00EFE673 /* DivRss.xcdatamodeld */,
 			);
 			name = "Supporting Files";
@@ -356,6 +366,8 @@
 				185980AE169F4D7A0069556C /* RSSCell.m in Sources */,
 				185980B6169F55030069556C /* RSSDetailViewController.m in Sources */,
 				1895583C169F84ED0059C7D1 /* LocalSubstitutionCache.m in Sources */,
+				189C923616A2FD6700DAB621 /* Reachability.m in Sources */,
+				189C923716A2FD6700DAB621 /* RNCachingURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +452,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DivRssReader/DivRssReader-Prefix.pch";
 				INFOPLIST_FILE = "DivRssReader/DivRssReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -453,6 +466,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DivRssReader/DivRssReader-Prefix.pch";
 				INFOPLIST_FILE = "DivRssReader/DivRssReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

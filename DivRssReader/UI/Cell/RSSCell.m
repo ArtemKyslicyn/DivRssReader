@@ -9,6 +9,9 @@
 #import "RSSCell.h"
 
 @implementation RSSCell
+@synthesize lblTitle;
+@synthesize lblDate;
+@synthesize lblDesc;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -27,10 +30,24 @@
 }
 
 -(void)configureCellWithRssItem:(RSSItem*)item{
-    _lblTitle.text=item.title;
-    _lblDate.text=item.pubDate;
-    _textViewDescr.text=item.descript;
+    self.lblTitle.text=item.title;
+   
+    CGRect lblTitleRect=lblTitle.frame;
+    lblTitleRect.size.height=[item titleHeight];
+    self.lblTitle.frame=lblTitleRect;
+    
+    lblDate.text=item.pubDate;
+    CGRect lblDateRect=lblDate.frame;
+    lblDateRect.size.height=[item pubDateHeight];
+    lblDateRect.origin.y=lblTitle.frame.origin.y+lblTitle.frame.size.height;
+    self.lblDate.frame=lblDateRect;
+    
+    lblDesc.text=item.descript;
 
+    CGRect lblDescRect=lblDesc.frame;
+    lblDescRect.size.height=[item descriptHeight];
+    lblDescRect.origin.y=lblDate.frame.origin.y+lblDate.frame.size.height;
+    self.lblDesc.frame=lblDescRect;
 }
 
 @end

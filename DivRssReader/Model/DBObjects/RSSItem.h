@@ -18,5 +18,8 @@
 @property (nonatomic, retain) NSString * pubDate;
 
 +(RSSItem*)createRSSObjectFromXmlItem:(GDataXMLElement*)xmlItem;
-
+-(float)titleHeight;
+-(float)descriptHeight;
+-(float)pubDateHeight;
+-(float)cellHeight;
 @end

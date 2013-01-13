@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RSSItem.h"
 @interface RSSCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UITextView *textViewDescr;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UITextView *lblDesc;
 -(void)configureCellWithRssItem:(RSSItem*)item;
 @end

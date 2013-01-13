@@ -32,4 +32,21 @@
     
     return item;
 }
+
+-(float)cellHeight{
+    float height;
+    height=[self titleHeight]+[self descriptHeight]+[self pubDateHeight]+15;
+    return height;
+}
+
+-(float)titleHeight{
+    return [self.title sizeWithFont:[UIFont boldSystemFontOfSize:17] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
+}
+-(float)descriptHeight{
+    return [self.descript sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeCharacterWrap].height;
+}
+
+-(float)pubDateHeight{
+    return [self.pubDate sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(265, 9999) lineBreakMode:UILineBreakModeWordWrap].height;
+}
 @end

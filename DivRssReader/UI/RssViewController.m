@@ -9,6 +9,7 @@
 #import "RssViewController.h"
 #import "RSSCell.h"
 #import "RSSDetailViewController.h"
+
 @interface RssViewController ()
 
 @end
@@ -27,15 +28,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    	// Do any additional setup after loading the view.
+    [self getServerData];
+}
+
+-(void)getServerData{
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     [[DivRssApi sharedClient] getRSSsuccess:^(AFHTTPRequestOperation * operation, id responseObject){
-    NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         rssArray=responseObject;
         [self.tableView reloadData];
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error){
         rssArray=[[DivRssDataSource sharedClient] getAllRss];
         [self.tableView reloadData];
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
     } ];
-	// Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,6 +53,11 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - Table view data source
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return  [[rssArray objectAtIndex:indexPath.row] cellHeight];
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -69,44 +83,8 @@
     return cell;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - Table view delegate
 
