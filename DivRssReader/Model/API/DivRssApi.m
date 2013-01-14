@@ -9,8 +9,7 @@
 #import "DivRssApi.h"
 #import "GDataXMLNode.h"
 #import "RSSItem.h"
-#import "LocalSubstitutionCache.h"
-#import "SDURLCache.h"
+
 @implementation DivRssApi
 
 + (DivRssApi *)sharedClient{

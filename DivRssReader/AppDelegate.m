@@ -7,24 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "LocalSubstitutionCache.h"
-#import "SDUrlCache.h"
 #import "RNCachingURLProtocol.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-         
-    /*SDURLCache *urlCache = [[SDURLCache alloc] initWithMemoryCapacity:1024*1024   // 1MB mem cache
-                                                         diskCapacity:1024*1024*5 // 5MB disk cache
-                                                             diskPath:[SDURLCache defaultCachePath]];
-    [urlCache setMinCacheInterval:1];
-    [NSURLCache setSharedURLCache:urlCache];*/
-   
+    
     [NSURLProtocol registerClass:[RNCachingURLProtocol class]];
-   // LocalSubstitutionCache *cache = [[LocalSubstitutionCache alloc] init];
-   // [NSURLCache setSharedURLCache:cache];
-    // Override point for customization after application launch.
   
      return YES;
 }

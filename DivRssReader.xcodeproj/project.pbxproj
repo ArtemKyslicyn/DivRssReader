@@ -10,7 +10,6 @@
 		185980AE169F4D7A0069556C /* RSSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185980AD169F4D790069556C /* RSSCell.m */; };
 		185980B6169F55030069556C /* RSSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185980B5169F55030069556C /* RSSDetailViewController.m */; };
 		18955839169F81770059C7D1 /* fakeGlobalNavBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 18955838169F81770059C7D1 /* fakeGlobalNavBG.png */; };
-		1895583C169F84ED0059C7D1 /* LocalSubstitutionCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895583B169F84ED0059C7D1 /* LocalSubstitutionCache.m */; };
 		189C33A6169C9B4800EFE673 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189C33A5169C9B4800EFE673 /* UIKit.framework */; };
 		189C33A8169C9B4800EFE673 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189C33A7169C9B4800EFE673 /* Foundation.framework */; };
 		189C33AA169C9B4800EFE673 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189C33A9169C9B4800EFE673 /* CoreGraphics.framework */; };
@@ -47,8 +46,6 @@
 		185980B4169F55030069556C /* RSSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSSDetailViewController.h; path = UI/RSSDetailViewController.h; sourceTree = "<group>"; };
 		185980B5169F55030069556C /* RSSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSSDetailViewController.m; path = UI/RSSDetailViewController.m; sourceTree = "<group>"; };
 		18955838169F81770059C7D1 /* fakeGlobalNavBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fakeGlobalNavBG.png; sourceTree = SOURCE_ROOT; };
-		1895583A169F84ED0059C7D1 /* LocalSubstitutionCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalSubstitutionCache.h; path = Model/Cache/LocalSubstitutionCache.h; sourceTree = "<group>"; };
-		1895583B169F84ED0059C7D1 /* LocalSubstitutionCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalSubstitutionCache.m; path = Model/Cache/LocalSubstitutionCache.m; sourceTree = "<group>"; };
 		189C33A1169C9B4800EFE673 /* DivRssReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DivRssReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189C33A5169C9B4800EFE673 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		189C33A7169C9B4800EFE673 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,8 +121,6 @@
 				189C923316A2FD6700DAB621 /* Reachability.m */,
 				189C923416A2FD6700DAB621 /* RNCachingURLProtocol.h */,
 				189C923516A2FD6700DAB621 /* RNCachingURLProtocol.m */,
-				1895583A169F84ED0059C7D1 /* LocalSubstitutionCache.h */,
-				1895583B169F84ED0059C7D1 /* LocalSubstitutionCache.m */,
 			);
 			name = WebCache;
 			sourceTree = "<group>";
@@ -365,7 +360,6 @@
 				18D29C8B169E0FD1006A107B /* RSSItem.m in Sources */,
 				185980AE169F4D7A0069556C /* RSSCell.m in Sources */,
 				185980B6169F55030069556C /* RSSDetailViewController.m in Sources */,
-				1895583C169F84ED0059C7D1 /* LocalSubstitutionCache.m in Sources */,
 				189C923616A2FD6700DAB621 /* Reachability.m in Sources */,
 				189C923716A2FD6700DAB621 /* RNCachingURLProtocol.m in Sources */,
 			);

@@ -86,14 +86,6 @@
   [super viewWillAppear:animated];
     
 	
-   /* NSData *data = [NSData dataWithContentsOfFile:[self cacheFile]
-                                          options:NSDataReadingMappedAlways error:nil];
-    
-    NSString *myString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",myString);*/
-    
-
-   
 }
 
 - (void)didReceiveMemoryWarning
