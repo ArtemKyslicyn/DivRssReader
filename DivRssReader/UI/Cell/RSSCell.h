@@ -13,5 +13,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblDesc;
+/*
+ @discussion configure cell from core date item
+ @param core data item RssItem
+ */
 -(void)configureCellWithRssItem:(RSSItem*)item;
 @end
