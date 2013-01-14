@@ -14,9 +14,18 @@
 	NSPersistentStoreCoordinator * _persistentStoreCoordinator;
     
 }
-
+/*
+ @discussion property context for nmanaged object
+ */
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+/*
+ @discussion property model for nmanaged object
+ */
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+/*
+ @discussion property for persisten store coordinator
+ */
+
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 
@@ -47,6 +56,12 @@
  */
 -(void)removeAllEntityName:(NSString*)entityName withPredicate:(NSPredicate*)predicate;
 
+/*
+ @discussion get Array for key
+ @param arr object type namr
+ @param prdicate fo get objects
+ @result Отсортированный массив.
+ */
 - (NSArray *) getAllByName:(NSString *)objectName predicate:(NSPredicate*)predicate;
 
 
