@@ -75,7 +75,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"RSSCell";
-    RSSCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    RSSCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
     
     RSSItem *item=[rssArray objectAtIndex:indexPath.row];
     [cell configureCellWithRssItem:item];
