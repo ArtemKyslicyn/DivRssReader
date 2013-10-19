@@ -8,55 +8,51 @@
 
 #import "DivRssDataSource.h"
 #import "RSSItem.h"
+
 @implementation DivRssDataSource
 
 + (id)sharedClient
 {
-    static dispatch_once_t pred = 0;
-    __strong static id __dataSource = nil;
+	static dispatch_once_t pred = 0;
+	__strong static id __dataSource = nil;
     
-    dispatch_once(&pred, ^{
-        __dataSource=[[self alloc]init];
+	dispatch_once(&pred, ^{
+	    __dataSource = [[self alloc]init];
+	});
     
-        
-    });
-    
-    return __dataSource;
+	return __dataSource;
 }
 
-
-- (RSSItem*) getRssItemForTitle:(NSString*)title  {
-    
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title LIKE %@",title];
-        NSArray *rssItems = [self getAllByName:@"RSSItem" predicate:predicate];
-        return [rssItems lastObject];
-    
+- (RSSItem *)getRssItemForTitle:(NSString *)title
+{
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title LIKE %@", title];
+	NSArray *rssItems = [self getAllByName:@"RSSItem" predicate:predicate];
+	return [rssItems lastObject];
 }
 
--(NSArray*)getAllRss{
+- (NSArray *)getAllRss
+{
+	NSArray *rssItems = [self getAllByName:@"RSSItem"];
+        //sorting by item order
+	rssItems = [self sortArray:rssItems byKey:@"orderNumber" ascending:YES];
     
-    NSArray *rssItems = [self getAllByName:@"RSSItem"];
-    //sorting by item order
-    rssItems=[self  sortArray: rssItems byKey:@"orderNumber" ascending:YES];
+        //sorted by date
     
-    //sorted by date
+	/*rssItems = [rssItems sortedArrayUsingComparator: ^(id a, id b) {
+     
+     RSSItem * itemA=a;
+     RSSItem * itemB=b;
+     
+     NSDateFormatter *dateFormatA = [[NSDateFormatter alloc] init];
+     //@"YYYY-MM-dd'T'HH:mm:ss'+0000'"
+     [dateFormatA setDateFormat:@"EEEE, dd MM YYYY HH:mm:ss' PDT'"];
+     NSDate *d1 = [dateFormatA dateFromString:itemA.pubDate];
+     NSDate *d2 = [dateFormatA dateFromString:itemB.pubDate];
+     
+     return [d2 compare: d1];
+     }];*/
     
-    /*rssItems = [rssItems sortedArrayUsingComparator: ^(id a, id b) {
-        
-        RSSItem * itemA=a;
-        RSSItem * itemB=b;
-        
-       NSDateFormatter *dateFormatA = [[NSDateFormatter alloc] init];
-        //@"YYYY-MM-dd'T'HH:mm:ss'+0000'"
-        [dateFormatA setDateFormat:@"EEEE, dd MM YYYY HH:mm:ss' PDT'"];
-        NSDate *d1 = [dateFormatA dateFromString:itemA.pubDate];
-        NSDate *d2 = [dateFormatA dateFromString:itemB.pubDate];
-        
-        return [d2 compare: d1];
-    }];*/
-    
-    return rssItems;
-
+	return rssItems;
 }
 
 @end

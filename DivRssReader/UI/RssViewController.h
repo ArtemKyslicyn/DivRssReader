@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
-@interface RssViewController : UITableViewController{
-    NSArray*rssArray;
+
+@interface RssViewController : UITableViewController {
+	NSArray *rssArray;
 }
 
 @end
