@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "DataSource.h"
+
 @interface DivRssDataSource : DataSource
 /*
- @discussion static singeton metod 
+ @discussion static singeton metod
  @result singletone instance
  */
 + (id)sharedClient;
@@ -18,6 +19,6 @@
  @discussion static singeto metod
  @result return array of rss items from core data
  */
--(NSArray*)getAllRss;
+- (NSArray *)getAllRss;
 
 @end

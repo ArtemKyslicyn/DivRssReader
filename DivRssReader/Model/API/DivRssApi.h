@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "AFHTTPClient.h"
+
 @interface DivRssApi : AFHTTPClient
 /*
  @discussion rss singleton  method returned shared instance
@@ -20,6 +21,6 @@
  @param success block for response parse xml core data objects
  @param fail block for response return erro of request
  */
--(void)getRSSsuccess:(void (^)(AFHTTPRequestOperation * operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (void)getRSSsuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 @end

@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSSDetailViewController : UIViewController{
-    
-}
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@interface RSSDetailViewController : UIViewController
 
-@property(nonatomic,retain) NSString * urlString;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (nonatomic, retain) NSString *urlString;
+
 @end
